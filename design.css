@@ -1,0 +1,240 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fffaf7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  background: #f78da7;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 10px 0 0 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer {
+  background: #f78da7;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Mascot Animation */
+.mascot-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.mascot-bounce {
+  width: 100px;
+  height: auto;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Flavors Section */
+.flavor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.flavor-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.flavor-card:hover {
+  transform: scale(1.05);
+}
+
+.flavor-card button {
+  margin-top: 10px;
+  background: #f78da7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flavor-card button:hover {
+  background: #e75c8c;
+}
+
+/* Cart Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  overflow-y: auto;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  animation: zoomIn 0.5s ease;
+  border: 1px solid #f78da7;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdf0f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.cart-buttons button {
+  background: #f78da7;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-buttons button:hover {
+  background: #e65c8b;
+}
+
+.cart-btn, .modal-content button {
+  background: #f78da7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-btn:hover, .modal-content button:hover {
+  background: #e75c8c;
+}
+
+/* Forms */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo {
+    width: 70px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .flavor-card {
+    width: 90%;
+  }
+}

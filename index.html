@@ -1,5 +1,98 @@
+
 <!DOCTYPE html>
-<html>
-<head><title>Placeholder</title></head>
-<body>Hello World!</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Izaan's Ice Cream Paradise</title>
+  <link rel="stylesheet" href="design.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Izaan's Logo" class="logo">
+  <h1>Izaan's Ice Cream Paradise</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#flavors">Flavors</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Mascot Animation -->
+<div class="mascot-container">
+  <img src="ChatGPT Image Apr 26, 2025, 02_23_32 PM.png" alt="Mascot" class="mascot-bounce">
+</div>
+
+<section id="home" class="section">
+  <h2>Welcome to Izaan's Ice Cream Paradise!</h2>
+  <p>The most delicious frozen treats you'll ever taste! 🍦</p>
+</section>
+
+<section id="flavors" class="section">
+  <h2>Our Flavors</h2>
+  <div class="flavor-container">
+    <div class="flavor-card"><h3>Vanilla</h3><p>$3</p><button onclick="addToCart('Vanilla', 3)">Add to Cart</button></div>
+    <div class="flavor-card"><h3>Chocolate</h3><p>$3.5</p><button onclick="addToCart('Chocolate', 3.5)">Add to Cart</button></div>
+    <div class="flavor-card"><h3>Strawberry</h3><p>$3.25</p><button onclick="addToCart('Strawberry', 3.25)">Add to Cart</button></div>
+    <div class="flavor-card"><h3>Mango</h3><p>$3.75</p><button onclick="addToCart('Mango', 3.75)">Add to Cart</button></div>
+    <div class="flavor-card"><h3>Mint Chocolate</h3><p>$3.5</p><button onclick="addToCart('Mint Chocolate', 3.5)">Add to Cart</button></div>
+  </div>
+  <button class="cart-btn" onclick="openCart()">🛒 View Cart</button>
+</section>
+
+<!-- Cart Modal -->
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="cartTotal"><strong>Total: $0.00</strong></p>
+    <button onclick="openOrderForm()">Proceed to Order</button>
+  </div>
+</div>
+
+<!-- Order Modal -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeOrderForm()">&times;</span>
+    <h2>Complete Your Order</h2>
+    <form id="orderForm">
+      <input type="text" id="orderName" placeholder="Name" required>
+      <input type="text" id="orderAddress" placeholder="Address" required>
+      <input type="email" id="orderEmail" placeholder="Email" required>
+      <button type="submit">Send Order</button>
+    </form>
+  </div>
+</div>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>We serve the creamiest and most delicious ice creams made with love and premium ingredients. Come taste happiness!</p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Izaan's Ice Cream Paradise. All rights reserved.</p>
+</footer>
+
+<script>
+  emailjs.init("NAzC-YRqZ49imKfBx");
+</script>
+<script src="design.js"></script>
+</body>
 </html>
